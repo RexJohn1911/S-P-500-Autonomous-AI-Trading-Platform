@@ -56,7 +56,7 @@ frontend/dist-ssr/
 *.sqlite
 *.sqlite3
 *.db
-data/
+/data/
 logs/
 *.log
 

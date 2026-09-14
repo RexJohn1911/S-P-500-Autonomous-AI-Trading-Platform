@@ -1,12 +1,12 @@
 {
   "state": "ARMED",
   "is_triggered": false,
-  "triggered_at": "2026-09-14T09:41:19.295113+00:00",
+  "triggered_at": "2026-09-14T10:10:46.397788+00:00",
   "triggered_by": "TESTER",
   "reason": "Test UI Emergency Halt",
-  "cleared_at": "2026-09-14T09:41:19.297265+00:00",
+  "cleared_at": "2026-09-14T10:10:46.400014+00:00",
   "cleared_by": "TESTER",
   "metadata": {
-    "timestamp": "2026-09-14T09:41:19.295105+00:00"
+    "timestamp": "2026-09-14T10:10:46.397785+00:00"
   }
 }
