@@ -678,12 +678,11 @@ async def get_models():
     regime_dir = root / "models" / "regimes" / "kmeans" / "regime-v1"
     regime_available = (regime_dir / "detector.joblib").exists()
     regime_model = {
-        "current_regime": regime_name if regime_available else "UNINITIALIZED",
-        "regime_detector": "K-Means (3 Clusters) + HMM",
-        "confidence": regime_conf if regime_available else 0.0,
-        "is_available": regime_available,
-    }
-
+    "current_regime": regime_name if latest_telemetry.get("regime") else "UNINITIALIZED",
+    "regime_detector": "K-Means (3 Clusters) + HMM",
+    "confidence": regime_conf if latest_telemetry.get("regime") else 0.0,
+    "is_available": regime_available,
+}
     available_count = sum(1 for m in active_models if m.is_available)
     ensemble_status = "OPERATIONAL" if available_count >= 4 else ("DEGRADED" if available_count > 0 else "UNAVAILABLE")
 
