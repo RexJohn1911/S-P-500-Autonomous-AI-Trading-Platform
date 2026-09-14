@@ -56,7 +56,21 @@ frontend/dist-ssr/
 *.sqlite
 *.sqlite3
 *.db
-/data/
+/data/*
+!/data/raw/
+!/data/raw/AAPL/
+!/data/raw/AAPL/1Day/
+!/data/raw/AAPL/1Day/bars.json
+!/data/raw/TSLA/
+!/data/raw/TSLA/1Day/
+!/data/raw/TSLA/1Day/bars.json
+!/data/processed/
+!/data/processed/AAPL/
+!/data/processed/AAPL/1Day/
+!/data/processed/AAPL/1Day/bars.parquet
+!/data/processed/SPY/
+!/data/processed/SPY/1Day/
+!/data/processed/SPY/1Day/bars.parquet
 logs/
 *.log
 
