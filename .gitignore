@@ -90,3 +90,11 @@ models/**/*.keras
 # Generated runtime / experiment artifacts
 models/autonomous/
 models/paper_trading/
+
+# Track small deterministic baseline model artifacts required by CI
+!models/trained/
+!models/trained/*/
+!models/trained/*/baseline-v1/
+!models/trained/*/baseline-v1/model.joblib
+!models/trained/*/baseline-v1/preprocessor.joblib
+!models/trained/*/baseline-v1/metadata.json
