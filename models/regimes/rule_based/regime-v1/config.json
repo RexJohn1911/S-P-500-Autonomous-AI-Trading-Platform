@@ -1,0 +1,22 @@
+{
+  "volatility_quantile_threshold": 0.6,
+  "trend_threshold": 0.0,
+  "calibrated_vol_threshold": 0.4238601198956235,
+  "detector_version": "regime-v1",
+  "feature_names": [
+    "return_20d",
+    "rolling_volatility_20d",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "vix_level",
+    "vix_change_5d"
+  ],
+  "n_regimes": 4,
+  "semantic_mapping": {
+    "0": "LOW_VOLATILITY_BULL",
+    "1": "HIGH_VOLATILITY_BEAR",
+    "2": "BULL_TRENDING",
+    "3": "SIDEWAYS_NEUTRAL"
+  },
+  "is_fitted": true
+}

@@ -1,0 +1,22 @@
+{
+  "run_id": "bt_exp_1367bc564339",
+  "dataset": "AAPL (1Day, 523 bars)",
+  "bars_count": 523,
+  "initial_capital": 100000.0,
+  "final_equity": 107419.47,
+  "total_pnl": 7419.47,
+  "total_return_pct": 7.42,
+  "cagr_pct": 3.51,
+  "sharpe_ratio": 0.339,
+  "sortino_ratio": 0.495,
+  "max_drawdown_pct": 12.25,
+  "calmar_ratio": 0.286,
+  "total_trades": 267,
+  "win_rate_pct": 75.28,
+  "profit_factor": 10.43,
+  "benchmark_spy_return_pct": 0.0,
+  "alpha_annualized": 0.0,
+  "beta_to_benchmark": 1.0,
+  "provenance_hash": "ee7f0944cc5339da0ed0e6a5d799ed69f98c57493ad01345062363e4c8ce6cc3",
+  "executed_at": "2026-09-08T08:56:25.497546+00:00"
+}

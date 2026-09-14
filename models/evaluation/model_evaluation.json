@@ -1,0 +1,807 @@
+{
+  "evaluation_timestamp": "2026-09-08T10:35:39.066468+00:00",
+  "dataset_provenance": {
+    "dataset_id": "AAPL_1Day_historical_bars",
+    "symbol": "AAPL",
+    "total_bars": 523,
+    "start_date": "2023-10-06T00:00:00+00:00",
+    "end_date": "2024-12-25T00:00:00+00:00",
+    "holdout_samples": 64,
+    "holdout_start": "2024-09-27T00:00:00+00:00",
+    "holdout_end": "2024-12-25T00:00:00+00:00",
+    "data_source": "Local Validated Daily Bar Store",
+    "used_for_training": 0,
+    "used_for_tuning": 0
+  },
+  "evaluation_period": {
+    "start": "2023-10-06T00:00:00+00:00",
+    "end": "2024-12-25T00:00:00+00:00",
+    "test_start": "2024-09-27T00:00:00+00:00",
+    "test_end": "2024-12-25T00:00:00+00:00"
+  },
+  "unseen_dataset_status": "INDEPENDENT OUT-OF-SAMPLE DATASET (CROSS-ASSET HOLDOUT)",
+  "unseen_dataset_details": {
+    "dataset_id": "AAPL_1Day_historical_bars",
+    "symbol": "AAPL",
+    "total_bars": 523,
+    "start_date": "2023-10-06T00:00:00+00:00",
+    "end_date": "2024-12-25T00:00:00+00:00",
+    "holdout_samples": 64,
+    "holdout_start": "2024-09-27T00:00:00+00:00",
+    "holdout_end": "2024-12-25T00:00:00+00:00",
+    "data_source": "Local Validated Daily Bar Store",
+    "used_for_training": 0,
+    "used_for_tuning": 0
+  },
+  "models_evaluated": [
+    "logistic_regression",
+    "random_forest",
+    "xgboost",
+    "lightgbm",
+    "mlp",
+    "lstm",
+    "transformer"
+  ],
+  "classification_results": {
+    "logistic_regression": {
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "total_samples": 64,
+      "positive_samples": 29,
+      "negative_samples": 35,
+      "accuracy": 0.421875,
+      "precision": 0.43548387096774194,
+      "recall": 0.9310344827586207,
+      "f1": 0.5934065934065934,
+      "roc_auc": 0.3152709359605911,
+      "pr_auc": 0.36316567439561825,
+      "log_loss": 1.7475169393799175,
+      "brier_score": 0.5023371176350394,
+      "baseline_majority_accuracy": 0.546875,
+      "accuracy_improvement": -0.125,
+      "p_value_vs_baseline": 0.98342787546459,
+      "confusion_matrix": {
+        "true_positive": 27,
+        "true_negative": 0,
+        "false_positive": 35,
+        "false_negative": 2,
+        "sensitivity_recall": 0.9310344827586207,
+        "specificity": 0.0,
+        "precision": 0.43548387096774194
+      },
+      "calibration": {
+        "brier_score": 0.5023371176350394,
+        "expected_calibration_error": 0.5041180580752558,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 1,
+            "mean_predicted_prob": 0.5938356931758471,
+            "actual_positive_rate": 1.0,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 1,
+            "mean_predicted_prob": 0.6815383409874425,
+            "actual_positive_rate": 1.0,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 2,
+            "mean_predicted_prob": 0.7470327355511941,
+            "actual_positive_rate": 1.0,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 13,
+            "mean_predicted_prob": 0.8494652310283348,
+            "actual_positive_rate": 0.46153846153846156,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 45,
+            "mean_predicted_prob": 0.9553321604158598,
+            "actual_positive_rate": 0.37777777777777777,
+            "status": "VALID"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": 0.006098367709041959,
+        "mean_return_short": 0.016429284961057247,
+        "median_return_long": 0.0021466223677997823,
+        "median_return_short": 0.016429284961057247,
+        "return_spread": -0.010330917252015287,
+        "long_observations": 62,
+        "short_observations": 2,
+        "horizon_days": 5
+      }
+    },
+    "random_forest": {
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "total_samples": 64,
+      "positive_samples": 29,
+      "negative_samples": 35,
+      "accuracy": 0.4375,
+      "precision": 0.4426229508196721,
+      "recall": 0.9310344827586207,
+      "f1": 0.6,
+      "roc_auc": 0.5655172413793104,
+      "pr_auc": 0.5215783550375449,
+      "log_loss": 0.755423053367569,
+      "brier_score": 0.2777449253108783,
+      "baseline_majority_accuracy": 0.546875,
+      "accuracy_improvement": -0.109375,
+      "p_value_vs_baseline": 0.9699151791054729,
+      "confusion_matrix": {
+        "true_positive": 27,
+        "true_negative": 1,
+        "false_positive": 34,
+        "false_negative": 2,
+        "sensitivity_recall": 0.9310344827586207,
+        "specificity": 0.02857142857142857,
+        "precision": 0.4426229508196721
+      },
+      "calibration": {
+        "brier_score": 0.2777449253108783,
+        "expected_calibration_error": 0.18381496731240513,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 22,
+            "mean_predicted_prob": 0.5628885421694152,
+            "actual_positive_rate": 0.3181818181818182,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 25,
+            "mean_predicted_prob": 0.631236946538901,
+            "actual_positive_rate": 0.48,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 12,
+            "mean_predicted_prob": 0.7457219413236732,
+            "actual_positive_rate": 0.5833333333333334,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 2,
+            "mean_predicted_prob": 0.825511510455096,
+            "actual_positive_rate": 0.5,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": 0.005654113828688825,
+        "mean_return_short": 0.022018808110899218,
+        "median_return_long": 0.0023102157741533057,
+        "median_return_short": 0.026244017907682778,
+        "return_spread": -0.016364694282210393,
+        "long_observations": 61,
+        "short_observations": 3,
+        "horizon_days": 5
+      }
+    },
+    "xgboost": {
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "total_samples": 64,
+      "positive_samples": 29,
+      "negative_samples": 35,
+      "accuracy": 0.4375,
+      "precision": 0.4444444444444444,
+      "recall": 0.9655172413793104,
+      "f1": 0.6086956521739131,
+      "roc_auc": 0.5635467980295567,
+      "pr_auc": 0.6570878076504638,
+      "log_loss": 0.7784101034584461,
+      "brier_score": 0.2915737630828022,
+      "baseline_majority_accuracy": 0.546875,
+      "accuracy_improvement": -0.109375,
+      "p_value_vs_baseline": 0.9699151791054729,
+      "confusion_matrix": {
+        "true_positive": 28,
+        "true_negative": 0,
+        "false_positive": 35,
+        "false_negative": 1,
+        "sensitivity_recall": 0.9655172413793104,
+        "specificity": 0.0,
+        "precision": 0.4444444444444444
+      },
+      "calibration": {
+        "brier_score": 0.2915737630828022,
+        "expected_calibration_error": 0.26435844227671623,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 13,
+            "mean_predicted_prob": 0.5601692153857305,
+            "actual_positive_rate": 0.5384615384615384,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 30,
+            "mean_predicted_prob": 0.6420708358287811,
+            "actual_positive_rate": 0.3,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 12,
+            "mean_predicted_prob": 0.7564152479171753,
+            "actual_positive_rate": 0.3333333333333333,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 8,
+            "mean_predicted_prob": 0.8377959430217743,
+            "actual_positive_rate": 1.0,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": 0.006106561110714813,
+        "mean_return_short": 0.026244017907682778,
+        "median_return_long": 0.0023102157741533057,
+        "median_return_short": 0.026244017907682778,
+        "return_spread": -0.020137456796967965,
+        "long_observations": 63,
+        "short_observations": 1,
+        "horizon_days": 5
+      }
+    },
+    "lightgbm": {
+      "model_name": "lightgbm",
+      "model_type": "lightgbm",
+      "total_samples": 64,
+      "positive_samples": 29,
+      "negative_samples": 35,
+      "accuracy": 0.40625,
+      "precision": 0.4262295081967213,
+      "recall": 0.896551724137931,
+      "f1": 0.5777777777777777,
+      "roc_auc": 0.5197044334975369,
+      "pr_auc": 0.5574890750344941,
+      "log_loss": 0.85316506379798,
+      "brier_score": 0.32169883885007855,
+      "baseline_majority_accuracy": 0.546875,
+      "accuracy_improvement": -0.140625,
+      "p_value_vs_baseline": 0.9913830944489425,
+      "confusion_matrix": {
+        "true_positive": 26,
+        "true_negative": 0,
+        "false_positive": 35,
+        "false_negative": 3,
+        "sensitivity_recall": 0.896551724137931,
+        "specificity": 0.0,
+        "precision": 0.4262295081967213
+      },
+      "calibration": {
+        "brier_score": 0.32169883885007855,
+        "expected_calibration_error": 0.2630525378236088,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 7,
+            "mean_predicted_prob": 0.5743305564377105,
+            "actual_positive_rate": 0.42857142857142855,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 23,
+            "mean_predicted_prob": 0.6488228236297955,
+            "actual_positive_rate": 0.34782608695652173,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 21,
+            "mean_predicted_prob": 0.737777118120071,
+            "actual_positive_rate": 0.47619047619047616,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 10,
+            "mean_predicted_prob": 0.8398804101640206,
+            "actual_positive_rate": 0.5,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": 0.00493194730153625,
+        "mean_return_short": 0.03670286082966825,
+        "median_return_long": 0.001983028961446259,
+        "median_return_short": 0.03332817417324449,
+        "return_spread": -0.031770913528131994,
+        "long_observations": 61,
+        "short_observations": 3,
+        "horizon_days": 5
+      }
+    },
+    "mlp": {
+      "model_name": "mlp",
+      "model_type": "mlp",
+      "total_samples": 64,
+      "positive_samples": 29,
+      "negative_samples": 35,
+      "accuracy": 0.4375,
+      "precision": 0.4444444444444444,
+      "recall": 0.9655172413793104,
+      "f1": 0.6086956521739131,
+      "roc_auc": 0.40689655172413797,
+      "pr_auc": 0.4362190485701582,
+      "log_loss": 0.9058507589690244,
+      "brier_score": 0.3395479080856742,
+      "baseline_majority_accuracy": 0.546875,
+      "accuracy_improvement": -0.109375,
+      "p_value_vs_baseline": 0.9699151791054729,
+      "confusion_matrix": {
+        "true_positive": 28,
+        "true_negative": 0,
+        "false_positive": 35,
+        "false_negative": 1,
+        "sensitivity_recall": 0.9655172413793104,
+        "specificity": 0.0,
+        "precision": 0.4444444444444444
+      },
+      "calibration": {
+        "brier_score": 0.3395479080856742,
+        "expected_calibration_error": 0.31617509108036757,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 3,
+            "mean_predicted_prob": 0.5491327444712321,
+            "actual_positive_rate": 1.0,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 19,
+            "mean_predicted_prob": 0.6588439376730668,
+            "actual_positive_rate": 0.5263157894736842,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 31,
+            "mean_predicted_prob": 0.7387491137750687,
+            "actual_positive_rate": 0.3548387096774194,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 9,
+            "mean_predicted_prob": 0.8399998678101434,
+            "actual_positive_rate": 0.4444444444444444,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 1,
+            "mean_predicted_prob": 0.903347909450531,
+            "actual_positive_rate": 0.0,
+            "status": "INSUFFICIENT SAMPLE"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": 0.006106561110714813,
+        "mean_return_short": 0.026244017907682778,
+        "median_return_long": 0.0023102157741533057,
+        "median_return_short": 0.026244017907682778,
+        "return_spread": -0.020137456796967965,
+        "long_observations": 63,
+        "short_observations": 1,
+        "horizon_days": 5
+      }
+    },
+    "lstm": {
+      "model_name": "lstm",
+      "model_type": "lstm",
+      "total_samples": 50,
+      "positive_samples": 16,
+      "negative_samples": 34,
+      "accuracy": 0.32,
+      "precision": 0.32,
+      "recall": 1.0,
+      "f1": 0.48484848484848486,
+      "roc_auc": 0.23161764705882354,
+      "pr_auc": 0.22687763817866263,
+      "log_loss": 1.134714240883052,
+      "brier_score": 0.43753206491641605,
+      "baseline_majority_accuracy": 0.68,
+      "accuracy_improvement": -0.36000000000000004,
+      "p_value_vs_baseline": 0.9999999589997245,
+      "confusion_matrix": {
+        "true_positive": 16,
+        "true_negative": 0,
+        "false_positive": 34,
+        "false_negative": 0,
+        "sensitivity_recall": 1.0,
+        "specificity": 0.0,
+        "precision": 0.32
+      },
+      "calibration": {
+        "brier_score": 0.43753206491641605,
+        "expected_calibration_error": 0.4762047696113586,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 2,
+            "mean_predicted_prob": 0.6380698680877686,
+            "actual_positive_rate": 1.0,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 38,
+            "mean_predicted_prob": 0.7618630324539385,
+            "actual_positive_rate": 0.34210526315789475,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 10,
+            "mean_predicted_prob": 0.8135582983493805,
+            "actual_positive_rate": 0.1,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": -0.0006217380804598038,
+        "mean_return_short": null,
+        "median_return_long": -0.004613044919473385,
+        "median_return_short": null,
+        "return_spread": null,
+        "long_observations": 50,
+        "short_observations": 0,
+        "horizon_days": 5
+      }
+    },
+    "transformer": {
+      "model_name": "transformer",
+      "model_type": "transformer",
+      "total_samples": 50,
+      "positive_samples": 16,
+      "negative_samples": 34,
+      "accuracy": 0.32,
+      "precision": 0.32,
+      "recall": 1.0,
+      "f1": 0.48484848484848486,
+      "roc_auc": 0.5551470588235294,
+      "pr_auc": 0.6246079251194019,
+      "log_loss": 1.146498944234092,
+      "brier_score": 0.4412635550761217,
+      "baseline_majority_accuracy": 0.68,
+      "accuracy_improvement": -0.36000000000000004,
+      "p_value_vs_baseline": 0.9999999589997245,
+      "confusion_matrix": {
+        "true_positive": 16,
+        "true_negative": 0,
+        "false_positive": 34,
+        "false_negative": 0,
+        "sensitivity_recall": 1.0,
+        "specificity": 0.0,
+        "precision": 0.32
+      },
+      "calibration": {
+        "brier_score": 0.4412635550761217,
+        "expected_calibration_error": 0.4837408244609832,
+        "buckets": [
+          {
+            "bucket_range": "0.50\u20130.60",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.60\u20130.70",
+            "count": 1,
+            "mean_predicted_prob": 0.6687156558036804,
+            "actual_positive_rate": 1.0,
+            "status": "INSUFFICIENT SAMPLE"
+          },
+          {
+            "bucket_range": "0.70\u20130.80",
+            "count": 29,
+            "mean_predicted_prob": 0.7699877373103438,
+            "actual_positive_rate": 0.2413793103448276,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.80\u20130.90",
+            "count": 20,
+            "mean_predicted_prob": 0.8263056248426437,
+            "actual_positive_rate": 0.4,
+            "status": "VALID"
+          },
+          {
+            "bucket_range": "0.90\u20131.00",
+            "count": 0,
+            "mean_predicted_prob": null,
+            "actual_positive_rate": null,
+            "status": "INSUFFICIENT SAMPLE"
+          }
+        ]
+      },
+      "forward_returns": {
+        "mean_return_long": -0.0006217380804598038,
+        "mean_return_short": null,
+        "median_return_long": -0.004613044919473385,
+        "median_return_short": null,
+        "return_spread": null,
+        "long_observations": 50,
+        "short_observations": 0,
+        "horizon_days": 5
+      }
+    }
+  },
+  "ensemble_classification_results": {
+    "model_name": "ensemble",
+    "model_type": "weighted_ensemble",
+    "total_samples": 64,
+    "positive_samples": 29,
+    "negative_samples": 35,
+    "accuracy": 0.4375,
+    "precision": 0.4444444444444444,
+    "recall": 0.9655172413793104,
+    "f1": 0.6086956521739131,
+    "roc_auc": 0.43546798029556655,
+    "pr_auc": 0.5044372199675773,
+    "log_loss": 0.9108915900891351,
+    "brier_score": 0.346179846131,
+    "baseline_majority_accuracy": 0.546875,
+    "accuracy_improvement": -0.109375,
+    "p_value_vs_baseline": 0.9699151791054729,
+    "confusion_matrix": {
+      "true_positive": 28,
+      "true_negative": 0,
+      "false_positive": 35,
+      "false_negative": 1,
+      "sensitivity_recall": 0.9655172413793104,
+      "specificity": 0.0,
+      "precision": 0.4444444444444444
+    },
+    "calibration": {
+      "brier_score": 0.346179846131,
+      "expected_calibration_error": 0.3413396875,
+      "buckets": [
+        {
+          "bucket_range": "0.50\u20130.60",
+          "count": 4,
+          "mean_predicted_prob": 0.54176125,
+          "actual_positive_rate": 1.0,
+          "status": "VALID"
+        },
+        {
+          "bucket_range": "0.60\u20130.70",
+          "count": 9,
+          "mean_predicted_prob": 0.6781416666666666,
+          "actual_positive_rate": 0.4444444444444444,
+          "status": "VALID"
+        },
+        {
+          "bucket_range": "0.70\u20130.80",
+          "count": 43,
+          "mean_predicted_prob": 0.7475485813953487,
+          "actual_positive_rate": 0.3488372093023256,
+          "status": "VALID"
+        },
+        {
+          "bucket_range": "0.80\u20130.90",
+          "count": 7,
+          "mean_predicted_prob": 0.823560142857143,
+          "actual_positive_rate": 0.7142857142857143,
+          "status": "VALID"
+        },
+        {
+          "bucket_range": "0.90\u20131.00",
+          "count": 0,
+          "mean_predicted_prob": null,
+          "actual_positive_rate": null,
+          "status": "INSUFFICIENT SAMPLE"
+        }
+      ]
+    },
+    "forward_returns": {
+      "mean_return_long": 0.006106561110714813,
+      "mean_return_short": 0.026244017907682778,
+      "median_return_long": 0.0023102157741533057,
+      "median_return_short": 0.026244017907682778,
+      "return_spread": -0.020137456796967965,
+      "long_observations": 63,
+      "short_observations": 1,
+      "horizon_days": 5
+    }
+  },
+  "signal_results": {
+    "total_signals": 64,
+    "long_count": 58,
+    "short_count": 0,
+    "flat_count": 6,
+    "avg_confidence": 0.4602,
+    "avg_model_agreement": 0.9853,
+    "reason_codes_breakdown": {
+      "NEUTRAL_SCORE": 5,
+      "LOW_CONFIDENCE": 1,
+      "BULLISH_ENSEMBLE_SCORE": 58,
+      "MODEL_CONSENSUS": 58,
+      "REGIME_UNKNOWN_DEFAULT": 58
+    }
+  },
+  "trading_results": {
+    "initial_capital": 100000.0,
+    "final_equity": 101271.4,
+    "total_return": 0.0127,
+    "cagr": 0.0472,
+    "annualized_volatility": 0.109,
+    "sharpe_ratio": 0.483,
+    "sortino_ratio": 0.715,
+    "max_drawdown": 0.0629,
+    "calmar_ratio": 0.751,
+    "total_trades": 32,
+    "win_rate": 0.8125,
+    "turnover": 1.1766,
+    "total_commission": 59.31,
+    "total_slippage": 59.31
+  },
+  "benchmark_comparison": {
+    "benchmark_symbol": "AAPL",
+    "strategy_return": 0.0127,
+    "benchmark_return": 0.0818,
+    "strategy_cagr": 0.0472,
+    "benchmark_cagr": 0.3327,
+    "strategy_sharpe": 0.483,
+    "benchmark_sharpe": 1.313,
+    "strategy_max_dd": 0.0629,
+    "benchmark_max_dd": 0.1231,
+    "alpha": -0.0845,
+    "beta": 0.3958,
+    "correlation": 0.8882
+  },
+  "walk_forward_results": {
+    "total_folds": 4,
+    "folds": [
+      {
+        "fold_idx": 1,
+        "train_period_start": "2023-10-06T00:00:00+00:00",
+        "train_period_end": "2024-01-02T00:00:00+00:00",
+        "test_period_start": "2024-01-03T00:00:00+00:00",
+        "test_period_end": "2024-03-29T00:00:00+00:00",
+        "train_samples": 63,
+        "test_samples": 63,
+        "accuracy": 0.4921,
+        "f1": 0.4483,
+        "roc_auc": 0.4819,
+        "pr_auc": 0.4953,
+        "return_spread": -0.0082
+      },
+      {
+        "fold_idx": 2,
+        "train_period_start": "2023-10-06T00:00:00+00:00",
+        "train_period_end": "2024-03-29T00:00:00+00:00",
+        "test_period_start": "2024-04-01T00:00:00+00:00",
+        "test_period_end": "2024-06-26T00:00:00+00:00",
+        "train_samples": 126,
+        "test_samples": 63,
+        "accuracy": 0.6032,
+        "f1": 0.5283,
+        "roc_auc": 0.6562,
+        "pr_auc": 0.6426,
+        "return_spread": 0.0226
+      },
+      {
+        "fold_idx": 3,
+        "train_period_start": "2023-10-06T00:00:00+00:00",
+        "train_period_end": "2024-06-26T00:00:00+00:00",
+        "test_period_start": "2024-06-27T00:00:00+00:00",
+        "test_period_end": "2024-09-23T00:00:00+00:00",
+        "train_samples": 189,
+        "test_samples": 63,
+        "accuracy": 0.5873,
+        "f1": 0.2778,
+        "roc_auc": 0.7859,
+        "pr_auc": 0.7088,
+        "return_spread": 0.0393
+      },
+      {
+        "fold_idx": 4,
+        "train_period_start": "2023-10-06T00:00:00+00:00",
+        "train_period_end": "2024-09-23T00:00:00+00:00",
+        "test_period_start": "2024-09-24T00:00:00+00:00",
+        "test_period_end": "2024-12-19T00:00:00+00:00",
+        "train_samples": 252,
+        "test_samples": 63,
+        "accuracy": 0.4286,
+        "f1": 0.5714,
+        "roc_auc": 0.6947,
+        "pr_auc": 0.6371,
+        "return_spread": 0.0204
+      }
+    ],
+    "mean_accuracy": 0.5278,
+    "median_accuracy": 0.5397,
+    "std_accuracy": 0.0713,
+    "min_accuracy": 0.4286,
+    "max_accuracy": 0.6032,
+    "mean_f1": 0.4565,
+    "mean_roc_auc": 0.6547
+  },
+  "leakage_checks": {
+    "future_rows_cannot_influence_current_features": 1,
+    "training_preprocessing_not_fitted_on_test_data": 1,
+    "test_data_remains_chronological": 1,
+    "labels_use_only_future_observations": 1,
+    "feature_timestamps_prior_or_equal_to_prediction": 1,
+    "prediction_timestamp_strictly_prior_to_forward_evaluation": 1,
+    "final_test_data_not_used_for_training": 1,
+    "final_test_data_not_used_for_threshold_tuning": 1,
+    "symbol_data_does_not_leak_across_securities": 1,
+    "walk_forward_folds_preserve_chronology": 1
+  },
+  "determinism_checks": {
+    "tabular_models_deterministic": 1,
+    "predictions_reproducible": 1,
+    "random_seed_locked": 1
+  },
+  "limitations": [
+    "Market regimes shift dynamically over time; static ensemble weights require ongoing walk-forward monitoring.",
+    "Historical simulated performance does not guarantee future live execution returns under changing liquidity conditions.",
+    "High majority class skew in bull markets elevates baseline accuracy; models must be evaluated against majority baseline."
+  ],
+  "conclusion": "Model evaluation completed successfully across 7 models on AAPL daily dataset. Ensemble achieved 43.75% accuracy vs 54.69% majority baseline with a forward return spread of -2.01%."
+}

@@ -1,0 +1,150 @@
+{
+  "detector_type": "gmm",
+  "detector_version": "regime-v1",
+  "trained_at": "2026-09-07T09:39:10.209754+00:00",
+  "feature_names": [
+    "return_20d",
+    "rolling_volatility_20d",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "vix_level",
+    "vix_change_5d"
+  ],
+  "n_regimes": 3,
+  "semantic_mapping": {
+    "0": "LOW_VOLATILITY_BULL",
+    "1": "HIGH_VOLATILITY_BEAR",
+    "2": "BULL_TRENDING"
+  },
+  "hyperparameters": {
+    "n_regimes": 3,
+    "random_state": 42
+  },
+  "train_period_start": "2023-01-02T00:00:00+00:00",
+  "train_period_end": "2024-01-26T00:00:00+00:00",
+  "val_period_start": "2024-01-29T00:00:00+00:00",
+  "val_period_end": "2024-04-19T00:00:00+00:00",
+  "test_period_start": "2024-04-22T00:00:00+00:00",
+  "test_period_end": "2024-07-12T00:00:00+00:00",
+  "train_diagnostics": {
+    "silhouette_score": 0.5833,
+    "davies_bouldin_index": 0.8524,
+    "calinski_harabasz_score": 249.6589,
+    "bic": -7299.0,
+    "aic": -7600.69,
+    "log_likelihood": 13.8691
+  },
+  "val_diagnostics": {
+    "silhouette_score": null,
+    "davies_bouldin_index": null,
+    "calinski_harabasz_score": null,
+    "bic": 4138.3,
+    "aic": 3964.47,
+    "log_likelihood": -31.6539
+  },
+  "test_diagnostics": {
+    "silhouette_score": null,
+    "davies_bouldin_index": null,
+    "calinski_harabasz_score": null,
+    "bic": 7046.28,
+    "aic": 6872.45,
+    "log_likelihood": -55.8871
+  },
+  "statistics_per_regime": {
+    "LOW_VOLATILITY_BULL": {
+      "regime_id": 0,
+      "regime_name": "LOW_VOLATILITY_BULL",
+      "observation_count": 0,
+      "percentage_of_samples": 0.0,
+      "mean_return": 0.0,
+      "median_return": 0.0,
+      "return_std": 0.0,
+      "mean_volatility": 0.0,
+      "median_volatility": 0.0,
+      "mean_vix": null,
+      "mean_duration_bars": 0.0,
+      "median_duration_bars": 0.0,
+      "min_duration_bars": 0,
+      "max_duration_bars": 0
+    },
+    "HIGH_VOLATILITY_BEAR": {
+      "regime_id": 1,
+      "regime_name": "HIGH_VOLATILITY_BEAR",
+      "observation_count": 0,
+      "percentage_of_samples": 0.0,
+      "mean_return": 0.0,
+      "median_return": 0.0,
+      "return_std": 0.0,
+      "mean_volatility": 0.0,
+      "median_volatility": 0.0,
+      "mean_vix": null,
+      "mean_duration_bars": 0.0,
+      "median_duration_bars": 0.0,
+      "min_duration_bars": 0,
+      "max_duration_bars": 0
+    },
+    "BULL_TRENDING": {
+      "regime_id": 2,
+      "regime_name": "BULL_TRENDING",
+      "observation_count": 60,
+      "percentage_of_samples": 1.0,
+      "mean_return": 0.001013,
+      "median_return": 0.001,
+      "return_std": 0.009268,
+      "mean_volatility": 0.150106,
+      "median_volatility": 0.152828,
+      "mean_vix": NaN,
+      "mean_duration_bars": 60.0,
+      "median_duration_bars": 60.0,
+      "min_duration_bars": 60,
+      "max_duration_bars": 60
+    }
+  },
+  "transition_matrix": {
+    "regime_names": [
+      "LOW_VOLATILITY_BULL",
+      "HIGH_VOLATILITY_BEAR",
+      "BULL_TRENDING"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "transition_counts": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        59
+      ]
+    ],
+    "total_transitions": 59,
+    "persistence_probabilities": {
+      "LOW_VOLATILITY_BULL": 1.0,
+      "HIGH_VOLATILITY_BEAR": 1.0,
+      "BULL_TRENDING": 1.0
+    }
+  }
+}

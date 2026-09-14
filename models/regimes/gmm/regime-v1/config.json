@@ -1,0 +1,21 @@
+{
+  "n_components": 3,
+  "covariance_type": "full",
+  "random_state": 42,
+  "detector_version": "regime-v1",
+  "feature_names": [
+    "return_20d",
+    "rolling_volatility_20d",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "vix_level",
+    "vix_change_5d"
+  ],
+  "n_regimes": 3,
+  "semantic_mapping": {
+    "0": "LOW_VOLATILITY_BULL",
+    "1": "HIGH_VOLATILITY_BEAR",
+    "2": "BULL_TRENDING"
+  },
+  "is_fitted": true
+}

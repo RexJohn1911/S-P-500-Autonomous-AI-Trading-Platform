@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sp500_trading_postgres_prod
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres_secure_password}
+      POSTGRES_DB: ${POSTGRES_DB:-sp500_trading_prod}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-sp500_trading_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trading_internal
+
+  redis:
+    image: redis:7-alpine
+    container_name: sp500_trading_redis_prod
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_prod_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - trading_internal
+
+  trading_system:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sp500_trading_system_prod
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - .env.production
+    environment:
+      - ENVIRONMENT=production
+      - EXECUTION_MODE=PAPER
+      - WORKERS_COUNT=1
+      - SERVE_STATIC_FRONTEND=True
+      - STATIC_DIR=frontend/dist
+    ports:
+      - "8000:8000"
+    volumes:
+      - trading_data:/app/data
+      - trading_models:/app/models
+      - trading_backtests:/app/backtests
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/live"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    networks:
+      - trading_internal
+
+volumes:
+  postgres_prod_data:
+    name: sp500_postgres_prod_data
+  redis_prod_data:
+    name: sp500_redis_prod_data
+  trading_data:
+    name: sp500_trading_data
+  trading_models:
+    name: sp500_trading_models
+  trading_backtests:
+    name: sp500_trading_backtests
+
+networks:
+  trading_internal:
+    name: sp500_trading_network
+    driver: bridge

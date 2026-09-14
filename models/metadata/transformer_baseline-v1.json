@@ -1,0 +1,220 @@
+{
+  "model_name": "transformer",
+  "model_type": "transformer",
+  "model_version": "baseline-v1",
+  "trained_at": "2026-09-07T09:24:57.770795+00:00",
+  "feature_names": [
+    "atr_14",
+    "ema_20",
+    "ema_200",
+    "ema_50",
+    "price_vs_sma_20",
+    "price_vs_sma_200",
+    "price_vs_sma_50",
+    "return_1d",
+    "return_20d",
+    "return_5d",
+    "rolling_volatility_20d",
+    "sma_20",
+    "sma_200",
+    "sma_50",
+    "volume_change_1d",
+    "volume_zscore_20d"
+  ],
+  "target_config": {
+    "forward_horizon": 5,
+    "return_threshold": 0.005,
+    "task_type": "binary_classification",
+    "target_name": "future_return_5d_pos"
+  },
+  "hyperparameters": {
+    "sequence_length": 15,
+    "num_heads": 2,
+    "key_dim": 16,
+    "ff_dim": 32,
+    "d_model": 32,
+    "dropout_rate": 0.2,
+    "learning_rate": 0.001,
+    "epochs": 15,
+    "batch_size": 32,
+    "patience": 5,
+    "random_state": 42
+  },
+  "train_metrics": {
+    "accuracy": 0.6962,
+    "precision": 0.6628,
+    "recall": 0.75,
+    "f1": 0.7037,
+    "roc_auc": 0.8082,
+    "pr_auc": 0.8101,
+    "log_loss": 0.5344,
+    "brier_score": 0.1783,
+    "confusion_matrix": [
+      [
+        53,
+        29
+      ],
+      [
+        19,
+        57
+      ]
+    ],
+    "trading_diagnostics": {
+      "mean_return_predicted_positive": 0.012230398824390337,
+      "mean_return_predicted_negative": -0.014680745320765064,
+      "return_spread": 0.0269111441451554,
+      "positive_prediction_count": 86,
+      "negative_prediction_count": 72,
+      "positive_class_ratio": 0.5443037974683544
+    }
+  },
+  "val_metrics": {
+    "accuracy": 0.6522,
+    "precision": 0.6667,
+    "recall": 0.5455,
+    "f1": 0.6,
+    "roc_auc": 0.7879,
+    "pr_auc": 0.8283,
+    "log_loss": 0.6002,
+    "brier_score": 0.2064,
+    "confusion_matrix": [
+      [
+        9,
+        3
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "trading_diagnostics": {
+      "mean_return_predicted_positive": 0.023408105952228826,
+      "mean_return_predicted_negative": -0.00153543453164314,
+      "return_spread": 0.024943540483871967,
+      "positive_prediction_count": 9,
+      "negative_prediction_count": 14,
+      "positive_class_ratio": 0.391304347826087
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.5652,
+    "precision": 0.7857,
+    "recall": 0.6111,
+    "f1": 0.6875,
+    "roc_auc": 0.4667,
+    "pr_auc": 0.8249,
+    "log_loss": 0.711,
+    "brier_score": 0.2585,
+    "confusion_matrix": [
+      [
+        2,
+        3
+      ],
+      [
+        7,
+        11
+      ]
+    ],
+    "trading_diagnostics": {
+      "mean_return_predicted_positive": 0.014480495193351806,
+      "mean_return_predicted_negative": 0.009208006411056282,
+      "return_spread": 0.005272488782295524,
+      "positive_prediction_count": 14,
+      "negative_prediction_count": 9,
+      "positive_class_ratio": 0.6086956521739131
+    }
+  },
+  "feature_importances": {},
+  "trainable_parameters": 7553,
+  "non_trainable_parameters": 0,
+  "total_parameters": 7553,
+  "training_history": {
+    "accuracy": [
+      0.6455696225166321,
+      0.6835442781448364,
+      0.6962025165557861,
+      0.6962025165557861,
+      0.7151898741722107,
+      0.7151898741722107,
+      0.702531635761261,
+      0.7215189933776855,
+      0.7405063509941101,
+      0.746835470199585
+    ],
+    "loss": [
+      0.6885959506034851,
+      0.6332587599754333,
+      0.5963432192802429,
+      0.5902690887451172,
+      0.5558907389640808,
+      0.5232450366020203,
+      0.5517777800559998,
+      0.5321300625801086,
+      0.518007218837738,
+      0.5112093091011047
+    ],
+    "roc_auc": [
+      0.6300545334815979,
+      0.7076380252838135,
+      0.7682124376296997,
+      0.7439826726913452,
+      0.790757417678833,
+      0.8183568716049194,
+      0.7949293851852417,
+      0.807766318321228,
+      0.8217265605926514,
+      0.8323973417282104
+    ],
+    "val_accuracy": [
+      0.695652186870575,
+      0.695652186870575,
+      0.782608687877655,
+      0.739130437374115,
+      0.6521739363670349,
+      0.739130437374115,
+      0.6086956262588501,
+      0.6521739363670349,
+      0.6086956262588501,
+      0.47826087474823
+    ],
+    "val_loss": [
+      0.6438781023025513,
+      0.6303265690803528,
+      0.6137586832046509,
+      0.6006843447685242,
+      0.6002271771430969,
+      0.6144360899925232,
+      0.6120471358299255,
+      0.613623321056366,
+      0.6240102648735046,
+      0.6408381462097168
+    ],
+    "val_roc_auc": [
+      0.6515151262283325,
+      0.6742424964904785,
+      0.7234848737716675,
+      0.7462121248245239,
+      0.7916666865348816,
+      0.7916666865348816,
+      0.7954545617103577,
+      0.7878787517547607,
+      0.7916666865348816,
+      0.7916666865348816
+    ]
+  },
+  "train_period_start": "2023-10-26T00:00:00+00:00",
+  "train_period_end": "2024-06-03T00:00:00+00:00",
+  "val_period_start": "2024-06-24T00:00:00+00:00",
+  "val_period_end": "2024-07-24T00:00:00+00:00",
+  "test_period_start": "2024-08-14T00:00:00+00:00",
+  "test_period_end": "2024-09-13T00:00:00+00:00",
+  "dataset_summary": {
+    "symbol": "SPY",
+    "timeframe": "1Day",
+    "train_samples": 158,
+    "val_samples": 23,
+    "test_samples": 23,
+    "train_positive_ratio": 0.4810126582278481,
+    "test_positive_ratio": 0.782608695652174
+  }
+}

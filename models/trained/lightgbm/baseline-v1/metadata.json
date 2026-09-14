@@ -1,0 +1,163 @@
+{
+  "model_name": "lightgbm",
+  "model_type": "lightgbm",
+  "model_version": "baseline-v1",
+  "trained_at": "2026-09-07T09:24:53.369741+00:00",
+  "feature_names": [
+    "atr_14",
+    "ema_20",
+    "ema_200",
+    "ema_50",
+    "price_vs_sma_20",
+    "price_vs_sma_200",
+    "price_vs_sma_50",
+    "return_1d",
+    "return_20d",
+    "return_5d",
+    "rolling_volatility_20d",
+    "sma_20",
+    "sma_200",
+    "sma_50",
+    "volume_change_1d",
+    "volume_zscore_20d"
+  ],
+  "target_config": {
+    "forward_horizon": 5,
+    "return_threshold": 0.005,
+    "task_type": "binary_classification",
+    "target_name": "future_return_5d_pos"
+  },
+  "hyperparameters": {
+    "n_estimators": 50,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "num_leaves": 15,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "random_state": 42,
+    "class_weight": "balanced",
+    "n_jobs": -1,
+    "verbose": -1
+  },
+  "train_metrics": {
+    "accuracy": 0.9012,
+    "precision": 0.9146,
+    "recall": 0.8824,
+    "f1": 0.8982,
+    "roc_auc": 0.9693,
+    "pr_auc": 0.9701,
+    "log_loss": 0.331,
+    "brier_score": 0.092,
+    "confusion_matrix": [
+      [
+        80,
+        7
+      ],
+      [
+        10,
+        75
+      ]
+    ],
+    "trading_diagnostics": {
+      "mean_return_predicted_positive": 0.02185898087043063,
+      "mean_return_predicted_negative": -0.016823187653301586,
+      "return_spread": 0.03868216852373221,
+      "positive_prediction_count": 82,
+      "negative_prediction_count": 90,
+      "positive_class_ratio": 0.47674418604651164
+    }
+  },
+  "val_metrics": {
+    "accuracy": 0.6757,
+    "precision": 1.0,
+    "recall": 0.3333,
+    "f1": 0.5,
+    "roc_auc": 0.693,
+    "pr_auc": 0.7499,
+    "log_loss": 0.7662,
+    "brier_score": 0.2606,
+    "confusion_matrix": [
+      [
+        19,
+        0
+      ],
+      [
+        12,
+        6
+      ]
+    ],
+    "trading_diagnostics": {
+      "mean_return_predicted_positive": 0.04274436284048685,
+      "mean_return_predicted_negative": -0.0035299797821546765,
+      "return_spread": 0.046274342622641525,
+      "positive_prediction_count": 6,
+      "negative_prediction_count": 31,
+      "positive_class_ratio": 0.16216216216216217
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.5676,
+    "precision": 0.7037,
+    "recall": 0.7037,
+    "f1": 0.7037,
+    "roc_auc": 0.537,
+    "pr_auc": 0.8021,
+    "log_loss": 0.7815,
+    "brier_score": 0.2813,
+    "confusion_matrix": [
+      [
+        2,
+        8
+      ],
+      [
+        8,
+        19
+      ]
+    ],
+    "trading_diagnostics": {
+      "mean_return_predicted_positive": 0.013975332743657098,
+      "mean_return_predicted_negative": 0.009497323148296339,
+      "return_spread": 0.004478009595360759,
+      "positive_prediction_count": 27,
+      "negative_prediction_count": 10,
+      "positive_class_ratio": 0.7297297297297297
+    }
+  },
+  "feature_importances": {
+    "atr_14": 3.0,
+    "ema_20": 13.0,
+    "ema_200": 26.0,
+    "ema_50": 17.0,
+    "price_vs_sma_20": 0.0,
+    "price_vs_sma_200": 20.0,
+    "price_vs_sma_50": 9.0,
+    "return_1d": 27.0,
+    "return_20d": 31.0,
+    "return_5d": 9.0,
+    "rolling_volatility_20d": 14.0,
+    "sma_20": 6.0,
+    "sma_200": 5.0,
+    "sma_50": 45.0,
+    "volume_change_1d": 4.0,
+    "volume_zscore_20d": 4.0
+  },
+  "trainable_parameters": null,
+  "non_trainable_parameters": null,
+  "total_parameters": null,
+  "training_history": null,
+  "train_period_start": "2023-10-06T00:00:00+00:00",
+  "train_period_end": "2024-06-03T00:00:00+00:00",
+  "val_period_start": "2024-06-04T00:00:00+00:00",
+  "val_period_end": "2024-07-24T00:00:00+00:00",
+  "test_period_start": "2024-07-25T00:00:00+00:00",
+  "test_period_end": "2024-09-13T00:00:00+00:00",
+  "dataset_summary": {
+    "symbol": "SPY",
+    "timeframe": "1Day",
+    "train_samples": 172,
+    "val_samples": 37,
+    "test_samples": 37,
+    "train_positive_ratio": 0.4941860465116279,
+    "test_positive_ratio": 0.7297297297297297
+  }
+}

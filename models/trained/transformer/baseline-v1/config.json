@@ -1,0 +1,37 @@
+{
+  "model_version": "baseline-v1",
+  "feature_names": [
+    "atr_14",
+    "ema_20",
+    "ema_200",
+    "ema_50",
+    "price_vs_sma_20",
+    "price_vs_sma_200",
+    "price_vs_sma_50",
+    "return_1d",
+    "return_20d",
+    "return_5d",
+    "rolling_volatility_20d",
+    "sma_20",
+    "sma_200",
+    "sma_50",
+    "volume_change_1d",
+    "volume_zscore_20d"
+  ],
+  "hyperparameters": {
+    "sequence_length": 15,
+    "num_heads": 2,
+    "key_dim": 16,
+    "ff_dim": 32,
+    "d_model": 32,
+    "dropout_rate": 0.2,
+    "learning_rate": 0.001,
+    "epochs": 15,
+    "batch_size": 32,
+    "patience": 5,
+    "random_state": 42
+  },
+  "trainable_params": 7553,
+  "total_params": 7553,
+  "is_fitted": true
+}
